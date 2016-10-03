@@ -5,6 +5,8 @@
   "keywords": "auto, comments, add, documentation",
   "main": "src/index.js",
   "bin": "lib/index.js",
+  "homepage": "https://github.com/vijaysutrave/commentify#readme",
+  "repository": "vijaysutrave/commentify",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d lib",

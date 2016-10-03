@@ -40,7 +40,7 @@ let checkIfCommentExists = (arr, index) => {
 let isFunctionCall = (value) => {
     if (value.match(/=[^\.]*=>/) ||
         value.match(/=\s*(?!\.)*function/) ||
-        value.match(/function\s*[a-zA-z]\(/)
+        value.match(/function\s*[a-zA-z]+\(/)
     ) {
         return false;
     }
@@ -48,6 +48,10 @@ let isFunctionCall = (value) => {
     return true;
 };
 
+let getSpacesToIndent = (currentItem) => {
+    console.log(currentItem);
+    return currentItem.substring(0, currentItem.search(/[^\s]/));
+};
 
 /**
 * Desc: Adds comments to the file, iteratively.
@@ -62,16 +66,17 @@ let addComment = (filename) => {
             if (value.match(/\(.*\)/) && !isFunctionCall(value)) {
                 let commentsExists = checkIfCommentExists(contentArray, index - 1);
                 if (!commentsExists) {
-                    let generateComment = '/**\n* Desc:\n';
+                    let indentSpace = getSpacesToIndent(value);
+                    let generateComment = `${indentSpace}/**\n${indentSpace}* Desc:\n`;
                     let x = value.match(/\(.*\)/)[0];
                     let params = x.slice(1, -1).split(',');
 
                     if (params.length && params[0]) {
                         params.forEach((param) => {
-                            generateComment += `* @param ${param.trim()}\n`;
+                            generateComment += `${indentSpace}* @param ${param.trim()}\n`;
                         });
                     }
-                    generateComment += `*/\n ${value}`;
+                    generateComment += `${indentSpace}*/\n ${value}`;
                     return generateComment;
                 }
                 return value;

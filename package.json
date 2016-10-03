@@ -4,6 +4,7 @@
   "description": "Auto add comments to your code, do better at documentation!",
   "keywords": "auto, comments, add, documentation",
   "main": "src/index.js",
+  "bin": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d lib",

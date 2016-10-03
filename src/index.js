@@ -96,7 +96,7 @@ const promptProps = {
             description: 'File (f) or Directory (d) ?'
         },
         directory: {
-            pattern: /^[a-zA-z0-9_\-]+\/?[a-zA-z0-9_\-]+$/,
+            pattern: /^[a-zA-z0-9_\-\/]+$/,
             message: 'Name must be only letters, spaces, or dashes, without JS extension',
             required: true,
             description: 'Which one?'

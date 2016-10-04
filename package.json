@@ -1,6 +1,6 @@
 {
   "name": "commentify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Auto add comments to your code, do better at documentation!",
   "keywords": "auto, comments, add, documentation",
   "main": "src/index.js",

@@ -102,7 +102,7 @@ const promptProps = {
         },
         directory: {
             pattern: /^[a-zA-z0-9_\-\/]+$/,
-            message: 'Name must be only letters, spaces, or dashes, without JS extension',
+            message: 'Name must be a valid directory name, if file do not add the JS extension',
             required: true,
             description: 'Which one?'
         }

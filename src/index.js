@@ -49,7 +49,6 @@ let isFunctionCall = (value) => {
 };
 
 let getSpacesToIndent = (currentItem) => {
-    console.log(currentItem);
     return currentItem.substring(0, currentItem.search(/[^\s]/));
 };
 
